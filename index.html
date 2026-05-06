@@ -878,6 +878,155 @@
     .skeleton { background: linear-gradient(90deg, var(--charcoal) 25%, var(--graphite) 50%, var(--charcoal) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: var(--radius-md); }
     .skeleton-select { height: 54px; margin-bottom: var(--space-md); }
 
+    /* ============================================
+       📢 お知らせセクション
+       ============================================ */
+
+    .announcement-section {
+      display: none; /* お知らせがある場合のみJS側でblock表示 */
+      padding: var(--space-md) var(--space-md) 0;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .announcement-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-sm);
+    }
+
+    .announcement-header-icon {
+      font-size: 1rem;
+    }
+
+    .announcement-header-text {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    .announcement-header-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(201,169,98,0.4) 0%, transparent 100%);
+    }
+
+    .announcement-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .announcement-item {
+      background: linear-gradient(145deg, rgba(26,26,26,0.95) 0%, rgba(42,42,42,0.95) 100%);
+      border: 1px solid rgba(201,169,98,0.18);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color var(--duration-base) var(--ease-in-out);
+      position: relative;
+    }
+
+    .announcement-item::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(201,169,98,0.4), transparent);
+    }
+
+    .announcement-item:hover {
+      border-color: rgba(201,169,98,0.35);
+    }
+
+    .announcement-item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-md) var(--space-lg);
+      gap: var(--space-md);
+    }
+
+    .announcement-item-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      flex: 1;
+      min-width: 0;
+    }
+
+    .announcement-new-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .announcement-item-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--platinum);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .announcement-item-arrow {
+      font-size: 1.1rem;
+      color: var(--gold);
+      transition: transform var(--duration-base) var(--ease-out-back);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .announcement-item.expanded .announcement-item-arrow {
+      transform: rotate(90deg);
+    }
+
+    .announcement-item-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height var(--duration-slow) var(--ease-out-expo),
+                  padding var(--duration-slow) var(--ease-out-expo);
+      padding: 0 var(--space-lg);
+    }
+
+    .announcement-item.expanded .announcement-item-body {
+      max-height: 400px;
+      padding: 0 var(--space-lg) var(--space-lg);
+    }
+
+    .announcement-item-body-inner {
+      border-top: 1px solid rgba(201,169,98,0.15);
+      padding-top: var(--space-md);
+    }
+
+    .announcement-item-content {
+      font-size: 0.875rem;
+      color: var(--silver);
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .announcement-item-deadline {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      margin-top: var(--space-md);
+      font-size: 0.7rem;
+      color: var(--smoke);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--graphite);
+      border-radius: var(--radius-full);
+      padding: 2px 10px;
+    }
+
     @media (max-width: 480px) {
       html { font-size: 14px; }
       .header-content { padding: var(--space-md); }
@@ -925,6 +1074,19 @@
       </div>
     </div>
     
+    <!-- ============================================
+         📢 お知らせセクション
+         スプレッドシート「お知らせ」シートから動的に読み込み
+         ============================================ -->
+    <div class="announcement-section" id="announcementSection">
+      <div class="announcement-header">
+        <span class="announcement-header-icon">📢</span>
+        <span class="announcement-header-text">お知らせ</span>
+        <span class="announcement-header-line"></span>
+      </div>
+      <div class="announcement-list" id="announcementList"></div>
+    </div>
+
     <!-- Progress -->
     <nav class="progress" aria-label="予約ステップ">
       <div class="progress-track">
@@ -1154,7 +1316,10 @@
 
     async function init() {
       setupListeners();
-      await loadMenus();
+      await Promise.all([
+        loadMenus(),
+        loadAnnouncements()   // お知らせをメニューと並行取得
+      ]);
       syncProgress();
     }
 
@@ -1817,6 +1982,57 @@
       a.download = 'paix_reservation.ics';
       a.click();
       URL.revokeObjectURL(url);
+    }
+
+    // ============================================
+    // 📢 お知らせ
+    // スプレッドシート「お知らせ」シートから取得・表示
+    // A列:件名 / B列:内容 / C列:掲載期限
+    // ============================================
+
+    async function loadAnnouncements() {
+      try {
+        const data = await api('getAnnouncements');
+        if (data.error || !data.announcements || data.announcements.length === 0) return;
+        renderAnnouncements(data.announcements);
+      } catch (e) {
+        // お知らせ取得失敗は予約フローに影響させない（静かに無視）
+        console.error('Announcements error:', e);
+      }
+    }
+
+    function renderAnnouncements(items) {
+      const section = document.getElementById('announcementSection');
+      const list = document.getElementById('announcementList');
+
+      list.innerHTML = items.map((item, i) => `
+        <div class="announcement-item" id="announcement-${i}" onclick="toggleAnnouncement(${i})" role="button" aria-expanded="false" tabindex="0">
+          <div class="announcement-item-header">
+            <div class="announcement-item-left">
+              <span class="announcement-new-dot"></span>
+              <span class="announcement-item-title">${escapeHtml(item.subject)}</span>
+            </div>
+            <span class="announcement-item-arrow">›</span>
+          </div>
+          <div class="announcement-item-body" id="announcement-body-${i}" aria-hidden="true">
+            <div class="announcement-item-body-inner">
+              <p class="announcement-item-content">${escapeHtml(item.content)}</p>
+              ${item.deadline
+                ? `<span class="announcement-item-deadline">📅 掲載期限：${escapeHtml(item.deadline)}</span>`
+                : ''}
+            </div>
+          </div>
+        </div>
+      `).join('');
+
+      section.style.display = 'block';
+    }
+
+    function toggleAnnouncement(i) {
+      const item = document.getElementById(`announcement-${i}`);
+      const isExpanded = item.classList.contains('expanded');
+      item.classList.toggle('expanded');
+      item.setAttribute('aria-expanded', String(!isExpanded));
     }
 
     function returnToHome() {
