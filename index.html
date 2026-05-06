@@ -20,11 +20,9 @@
   <style>
     /* ============================================
        🎨 DESIGN SYSTEM v7.0 - NOIR LUXE PREMIUM
-       監修: Webデザイン技能検定 1級
        ============================================ */
     
     :root {
-      /* === Color Palette === */
       --noir: #0A0A0A;
       --noir-light: #0F0F0F;
       --charcoal: #1A1A1A;
@@ -36,7 +34,6 @@
       --platinum: #E8E8E8;
       --white: #FFFFFF;
       
-      /* === Brand Colors === */
       --gold: #C9A962;
       --gold-light: #D4B978;
       --gold-lighter: #E5D4A8;
@@ -50,7 +47,6 @@
       --success: #4ECDC4;
       --success-muted: rgba(78, 205, 196, 0.15);
       
-      /* === Gradients === */
       --gradient-gold: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
       --gradient-gold-shine: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--gold-dark));
       --gradient-dark: linear-gradient(180deg, var(--noir) 0%, var(--charcoal) 100%);
@@ -62,12 +58,10 @@
                        radial-gradient(at 80% 50%, rgba(78,205,196,0.03) 0px, transparent 50%),
                        radial-gradient(at 0% 100%, rgba(201,169,98,0.08) 0px, transparent 50%);
       
-      /* === Typography === */
       --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
       --font-body: 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --font-accent: 'Playfair Display', Georgia, serif;
       
-      /* === Spacing Scale === */
       --space-2xs: 0.125rem;
       --space-xs: 0.25rem;
       --space-sm: 0.5rem;
@@ -78,7 +72,6 @@
       --space-3xl: 4rem;
       --space-4xl: 6rem;
       
-      /* === Border Radius === */
       --radius-xs: 2px;
       --radius-sm: 4px;
       --radius-md: 8px;
@@ -87,7 +80,6 @@
       --radius-2xl: 24px;
       --radius-full: 9999px;
       
-      /* === Shadows === */
       --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
       --shadow-md: 0 4px 12px rgba(0,0,0,0.4);
       --shadow-lg: 0 8px 24px rgba(0,0,0,0.5);
@@ -97,7 +89,6 @@
       --shadow-glow: 0 0 40px rgba(201, 169, 98, 0.3);
       --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.3);
       
-      /* === Transitions === */
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
       --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
       --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,7 +98,6 @@
       --duration-slow: 500ms;
       --duration-slower: 700ms;
       
-      /* === Z-Index === */
       --z-base: 1;
       --z-dropdown: 100;
       --z-sticky: 200;
@@ -118,10 +108,6 @@
       --z-tooltip: 700;
     }
 
-    /* ============================================
-       🔧 RESET & BASE STYLES
-       ============================================ */
-    
     *, *::before, *::after {
       box-sizing: border-box;
       margin: 0;
@@ -147,191 +133,35 @@
       position: relative;
     }
     
-    /* === Custom Selection === */
-    ::selection {
-      background: var(--gold);
-      color: var(--noir);
-    }
+    ::selection { background: var(--gold); color: var(--noir); }
+    ::-moz-selection { background: var(--gold); color: var(--noir); }
     
-    ::-moz-selection {
-      background: var(--gold);
-      color: var(--noir);
-    }
-    
-    /* === Custom Scrollbar === */
-    ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-    }
-    
-    ::-webkit-scrollbar-track {
-      background: var(--charcoal);
-    }
-    
-    ::-webkit-scrollbar-thumb {
-      background: linear-gradient(180deg, var(--gold-dark), var(--gold));
-      border-radius: 4px;
-    }
-    
-    ::-webkit-scrollbar-thumb:hover {
-      background: var(--gold-light);
-    }
-    
-    /* Firefox Scrollbar */
-    * {
-      scrollbar-width: thin;
-      scrollbar-color: var(--gold-dark) var(--charcoal);
-    }
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--charcoal); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--gold-dark), var(--gold)); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+    * { scrollbar-width: thin; scrollbar-color: var(--gold-dark) var(--charcoal); }
 
-    /* ============================================
-       🌟 KEYFRAME ANIMATIONS
-       監修: Webデザイン技能検定 1級
-       ============================================ */
-    
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-40px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.95);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes shimmer {
-      0% { background-position: -200% 0; }
-      100% { background-position: 200% 0; }
-    }
-    
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(0.98); }
-    }
-    
-    @keyframes glow {
-      0%, 100% { box-shadow: var(--shadow-gold); }
-      50% { box-shadow: var(--shadow-gold-lg), var(--shadow-glow); }
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    
-    @keyframes ripple {
-      0% {
-        transform: scale(0);
-        opacity: 0.6;
-      }
-      100% {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-    
-    @keyframes textGradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    
-    @keyframes borderFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-    @keyframes toastIn {
-      from {
-        opacity: 0;
-        transform: translateY(100%) scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-    }
-    
-    @keyframes toastOut {
-      from {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-      }
-      to {
-        opacity: 0;
-        transform: translateY(100%) scale(0.9);
-      }
-    }
-    
-    @keyframes countUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes dotPulse {
-      0%, 80%, 100% { transform: scale(0); opacity: 0; }
-      40% { transform: scale(1); opacity: 1; }
-    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideInRight { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+    @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.8; transform: scale(0.98); } }
+    @keyframes glow { 0%, 100% { box-shadow: var(--shadow-gold); } 50% { box-shadow: var(--shadow-gold-lg), var(--shadow-glow); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes ripple { 0% { transform: scale(0); opacity: 0.6; } 100% { transform: scale(4); opacity: 0; } }
+    @keyframes textGradient { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    @keyframes borderFlow { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    @keyframes toastIn { from { opacity: 0; transform: translateY(100%) scale(0.9); } to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes toastOut { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(100%) scale(0.9); } }
+    @keyframes countUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes dotPulse { 0%, 80%, 100% { transform: scale(0); opacity: 0; } 40% { transform: scale(1); opacity: 1; } }
+    @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-    /* ============================================
-       🏗️ LAYOUT STRUCTURE
-       監修: システムアーキテクト
-       ============================================ */
-    
     .app {
       min-height: 100vh;
       min-height: 100dvh;
@@ -340,27 +170,21 @@
       position: relative;
     }
     
-    /* === Gradient Mesh Background === */
     .app::before {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: var(--gradient-mesh);
       pointer-events: none;
       z-index: 0;
     }
     
-    /* === Noise Texture Overlay === */
     .app::after {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.015'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 0;
@@ -379,18 +203,11 @@
       padding: 0 var(--space-md);
     }
 
-    /* ============================================
-       🎯 HEADER
-       ============================================ */
-    
     .header {
       position: sticky;
       top: 0;
       z-index: var(--z-sticky);
-      background: linear-gradient(180deg, 
-        rgba(10,10,10,0.98) 0%, 
-        rgba(10,10,10,0.95) 70%,
-        rgba(10,10,10,0.9) 100%);
+      background: linear-gradient(180deg, rgba(10,10,10,0.98) 0%, rgba(10,10,10,0.95) 70%, rgba(10,10,10,0.9) 100%);
       backdrop-filter: blur(20px) saturate(180%);
       -webkit-backdrop-filter: blur(20px) saturate(180%);
       border-bottom: 1px solid rgba(201,169,98,0.15);
@@ -437,11 +254,6 @@
       opacity: 0.9;
     }
 
-    /* ============================================
-       📊 TRUST BADGES - 信頼性セクション
-       監修: Webアナリスト検定
-       ============================================ */
-    
     .trust-section {
       padding: var(--space-lg) 0;
       background: linear-gradient(180deg, transparent 0%, rgba(201,169,98,0.03) 50%, transparent 100%);
@@ -456,11 +268,6 @@
       width: max-content;
     }
     
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-    
     .trust-item {
       display: flex;
       align-items: center;
@@ -472,29 +279,10 @@
       border-radius: var(--radius-full);
     }
     
-    .trust-icon {
-      font-size: 1rem;
-    }
-    
-    .trust-text {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--gold-light);
-      letter-spacing: 0.02em;
-    }
-    
-    .trust-number {
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--gold);
-    }
+    .trust-icon { font-size: 1rem; }
+    .trust-text { font-size: 0.75rem; font-weight: 500; color: var(--gold-light); letter-spacing: 0.02em; }
+    .trust-number { font-family: var(--font-display); font-size: 0.9rem; font-weight: 600; color: var(--gold); }
 
-    /* ============================================
-       📈 PROGRESS INDICATOR
-       監修: Webアナリスト検定 - 離脱防止
-       ============================================ */
-    
     .progress {
       padding: var(--space-xl) var(--space-md);
     }
@@ -521,8 +309,7 @@
     
     .progress-fill {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 0; left: 0;
       height: 100%;
       background: var(--gradient-gold);
       border-radius: 2px;
@@ -541,8 +328,7 @@
     }
     
     .step-dot {
-      width: 36px;
-      height: 36px;
+      width: 36px; height: 36px;
       border-radius: 50%;
       background: var(--charcoal);
       border: 3px solid var(--graphite);
@@ -584,14 +370,8 @@
       color: var(--noir);
     }
     
-    .progress-step.completed .step-dot::after {
-      content: '✓';
-      font-size: 0.85rem;
-    }
-    
-    .progress-step.completed .step-dot span {
-      display: none;
-    }
+    .progress-step.completed .step-dot::after { content: '✓'; font-size: 0.85rem; }
+    .progress-step.completed .step-dot span { display: none; }
     
     .step-label {
       font-size: 0.65rem;
@@ -604,14 +384,8 @@
     }
     
     .progress-step.active .step-label,
-    .progress-step.completed .step-label {
-      color: var(--gold);
-    }
+    .progress-step.completed .step-label { color: var(--gold); }
 
-    /* ============================================
-       📦 SECTION CARDS
-       ============================================ */
-    
     .section {
       margin-bottom: var(--space-md);
       animation: fadeInUp var(--duration-slow) var(--ease-out-expo) backwards;
@@ -633,33 +407,20 @@
       transition: all var(--duration-base) var(--ease-out-expo);
     }
     
-    /* === Top Shine Line === */
     .card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(201,169,98,0.4) 30%,
-        rgba(201,169,98,0.6) 50%,
-        rgba(201,169,98,0.4) 70%,
-        transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(201,169,98,0.4) 30%, rgba(201,169,98,0.6) 50%, rgba(201,169,98,0.4) 70%, transparent 100%);
     }
     
-    /* === Glass Reflection === */
     .card::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 50%;
-      background: linear-gradient(180deg, 
-        rgba(255,255,255,0.02) 0%, 
-        transparent 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
       pointer-events: none;
     }
     
@@ -679,8 +440,7 @@
     }
     
     .card-icon {
-      width: 52px;
-      height: 52px;
+      width: 52px; height: 52px;
       background: linear-gradient(135deg, var(--gold-muted) 0%, rgba(201,169,98,0.08) 100%);
       border: 1px solid rgba(201,169,98,0.2);
       border-radius: var(--radius-lg);
@@ -691,33 +451,10 @@
       flex-shrink: 0;
     }
     
-    .card-title-group {
-      flex: 1;
-      min-width: 0;
-    }
-    
-    .card-title {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 500;
-      color: var(--platinum);
-      letter-spacing: 0.03em;
-      margin-bottom: 2px;
-    }
-    
-    .card-subtitle {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--smoke);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
+    .card-title-group { flex: 1; min-width: 0; }
+    .card-title { font-family: var(--font-display); font-size: 1.35rem; font-weight: 500; color: var(--platinum); letter-spacing: 0.03em; margin-bottom: 2px; }
+    .card-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--smoke); text-transform: uppercase; letter-spacing: 0.12em; }
 
-    /* ============================================
-       ⚡ AVAILABILITY BADGE - 残り枠表示
-       監修: Webアナリスト検定 - 緊急性演出
-       ============================================ */
-    
     .availability-badge {
       display: inline-flex;
       align-items: center;
@@ -732,74 +469,20 @@
       animation: pulse 2s ease-in-out infinite;
     }
     
-    .availability-dot {
-      width: 6px;
-      height: 6px;
-      background: var(--rose);
-      border-radius: 50%;
-      animation: glow 1.5s ease-in-out infinite;
-    }
-    
-    .availability-badge.high {
-      background: var(--success-muted);
-      border-color: rgba(78,205,196,0.3);
-      color: var(--success);
-    }
-    
-    .availability-badge.high .availability-dot {
-      background: var(--success);
-    }
+    .availability-dot { width: 6px; height: 6px; background: var(--rose); border-radius: 50%; animation: glow 1.5s ease-in-out infinite; }
+    .availability-badge.high { background: var(--success-muted); border-color: rgba(78,205,196,0.3); color: var(--success); }
+    .availability-badge.high .availability-dot { background: var(--success); }
 
-    /* ============================================
-       🍽️ MENU SELECTION
-       ============================================ */
+    .menu-group { margin-bottom: var(--space-lg); position: relative; z-index: 1; }
+    .menu-group:last-of-type { margin-bottom: 0; }
     
-    .menu-group {
-      margin-bottom: var(--space-lg);
-      position: relative;
-      z-index: 1;
-    }
+    .menu-label { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+    .menu-label-icon { font-size: 1rem; }
+    .menu-label-text { font-size: 1rem; font-weight: 600; color: var(--gold); text-transform: uppercase; letter-spacing: 0.08em; }
+    .menu-label-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold-muted) 0%, transparent 100%); }
+    .menu-description { font-size: 0.95rem; color: var(--platinum); margin-bottom: var(--space-sm); line-height: 1.6; }
     
-    .menu-group:last-of-type {
-      margin-bottom: 0;
-    }
-    
-    .menu-label {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-sm);
-    }
-    
-    .menu-label-icon {
-      font-size: 1rem;
-    }
-    
-    .menu-label-text {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-    
-    .menu-label-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, var(--gold-muted) 0%, transparent 100%);
-    }
-    
-    .menu-description {
-      font-size: 0.95rem;
-      color: var(--platinum);
-      margin-bottom: var(--space-sm);
-      line-height: 1.6;
-    }
-    
-    /* === Custom Select === */
-    .select-container {
-      position: relative;
-    }
+    .select-container { position: relative; }
     
     .select-input {
       width: 100%;
@@ -818,40 +501,23 @@
       transition: all var(--duration-base) var(--ease-in-out);
     }
     
-    .select-input:hover {
-      border-color: var(--gold-dark);
-      background: var(--graphite);
-    }
-    
-    .select-input:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px var(--gold-muted), var(--shadow-md);
-    }
-    
-    .select-input option {
-      background: var(--charcoal);
-      color: var(--platinum);
-      padding: var(--space-sm);
-    }
+    .select-input:hover { border-color: var(--gold-dark); background: var(--graphite); }
+    .select-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-muted), var(--shadow-md); }
+    .select-input option { background: var(--charcoal); color: var(--platinum); padding: var(--space-sm); }
     
     .select-arrow {
       position: absolute;
       right: var(--space-md);
       top: 50%;
       transform: translateY(-50%);
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       color: var(--gold);
       pointer-events: none;
       transition: transform var(--duration-fast);
     }
     
-    .select-input:focus + .select-arrow {
-      transform: translateY(-50%) rotate(180deg);
-    }
+    .select-input:focus + .select-arrow { transform: translateY(-50%) rotate(180deg); }
     
-    /* === Summary Card === */
     .summary-box {
       background: linear-gradient(135deg, var(--gold-muted) 0%, rgba(201,169,98,0.08) 100%);
       border: 1px solid rgba(201,169,98,0.2);
@@ -862,61 +528,17 @@
       z-index: 1;
     }
     
-    .summary-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: var(--space-sm) 0;
-    }
-    
-    .summary-row:first-child {
-      padding-top: 0;
-    }
-    
-    .summary-row:last-child {
-      padding-bottom: 0;
-    }
-    
-    .summary-row + .summary-row {
-      border-top: 1px solid rgba(201,169,98,0.15);
-      margin-top: var(--space-sm);
-    }
-    
-    .summary-label {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--silver);
-    }
-    
-    .summary-value {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--gold);
-      letter-spacing: 0.02em;
-    }
-    
-    .summary-value.price {
-      font-size: 1.6rem;
-      color: var(--gold-light);
-    }
-    
-    .summary-value.zero {
-      color: var(--smoke);
-    }
+    .summary-row { display: flex; justify-content: space-between; align-items: center; padding: var(--space-sm) 0; }
+    .summary-row:first-child { padding-top: 0; }
+    .summary-row:last-child { padding-bottom: 0; }
+    .summary-row + .summary-row { border-top: 1px solid rgba(201,169,98,0.15); margin-top: var(--space-sm); }
+    .summary-label { font-size: 0.85rem; font-weight: 500; color: var(--silver); }
+    .summary-value { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--gold); letter-spacing: 0.02em; }
+    .summary-value.price { font-size: 1.6rem; color: var(--gold-light); }
+    .summary-value.zero { color: var(--smoke); }
 
-    /* ============================================
-       📅 CALENDAR SECTION
-       ============================================ */
-    
-    .calendar-section {
-      display: none;
-    }
-    
-    .calendar-section.visible {
-      display: block;
-      animation: fadeInUp var(--duration-slow) var(--ease-out-expo);
-    }
+    .calendar-section { display: none; }
+    .calendar-section.visible { display: block; animation: fadeInUp var(--duration-slow) var(--ease-out-expo); }
     
     .week-navigation {
       display: flex;
@@ -944,31 +566,12 @@
       transition: all var(--duration-base) var(--ease-in-out);
     }
     
-    .nav-button:hover:not(:disabled) {
-      background: var(--gold-muted);
-      border-color: var(--gold);
-      color: var(--gold);
-    }
+    .nav-button:hover:not(:disabled) { background: var(--gold-muted); border-color: var(--gold); color: var(--gold); }
+    .nav-button:disabled { opacity: 0.35; cursor: not-allowed; }
+    .nav-button svg { width: 16px; height: 16px; }
     
-    .nav-button:disabled {
-      opacity: 0.35;
-      cursor: not-allowed;
-    }
+    .current-period { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--platinum); text-align: center; }
     
-    .nav-button svg {
-      width: 16px;
-      height: 16px;
-    }
-    
-    .current-period {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 500;
-      color: var(--platinum);
-      text-align: center;
-    }
-    
-    /* === Calendar Container === */
     .calendar-container {
       border: 1px solid rgba(201,169,98,0.15);
       border-radius: var(--radius-lg);
@@ -978,46 +581,21 @@
       z-index: 1;
     }
     
-    .calendar-loading {
-      display: none;
-      align-items: center;
-      justify-content: center;
-      gap: var(--space-sm);
-      padding: var(--space-xl);
-      color: var(--gold);
-      font-size: 0.85rem;
-    }
-    
-    .calendar-loading.active {
-      display: flex;
-    }
+    .calendar-loading { display: none; align-items: center; justify-content: center; gap: var(--space-sm); padding: var(--space-xl); color: var(--gold); font-size: 0.85rem; }
+    .calendar-loading.active { display: flex; }
     
     .loading-spinner-small {
-      width: 20px;
-      height: 20px;
+      width: 20px; height: 20px;
       border: 2px solid var(--gold-muted);
       border-top-color: var(--gold);
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
     }
     
-    .schedule-scroll {
-      max-height: 380px;
-      overflow-y: auto;
-    }
+    .schedule-scroll { max-height: 380px; overflow-y: auto; }
     
-    .schedule-table {
-      width: 100%;
-      border-collapse: collapse;
-      table-layout: fixed;
-    }
-    
-    .schedule-table th,
-    .schedule-table td {
-      border: 1px solid var(--graphite);
-      text-align: center;
-      padding: 0;
-    }
+    .schedule-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .schedule-table th, .schedule-table td { border: 1px solid var(--graphite); text-align: center; padding: 0; }
     
     .schedule-table thead th {
       background: var(--noir);
@@ -1028,150 +606,39 @@
       font-weight: 500;
     }
     
-    .schedule-table thead th:first-child {
-      position: sticky;
-      left: 0;
-      z-index: 20;
-      background: var(--noir);
-      width: 55px;
-      min-width: 55px;
-    }
+    .schedule-table thead th:first-child { position: sticky; left: 0; z-index: 20; background: var(--noir); width: 55px; min-width: 55px; }
     
-    .date-cell {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-    }
-    
-    .date-number {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--platinum);
-    }
-    
-    .date-day {
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--smoke);
-      text-transform: uppercase;
-    }
-    
+    .date-cell { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+    .date-number { font-size: 1rem; font-weight: 600; color: var(--platinum); }
+    .date-day { font-size: 0.65rem; font-weight: 500; color: var(--smoke); text-transform: uppercase; }
     .date-day.sunday { color: var(--rose); }
     .date-day.saturday { color: #5DADE2; }
     
-    .time-header {
-      background: var(--noir);
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--smoke);
-      padding: var(--space-sm);
-      position: sticky;
-      left: 0;
-      z-index: 5;
-      width: 55px;
-      min-width: 55px;
-    }
+    .time-header { background: var(--noir); font-size: 0.75rem; font-weight: 500; color: var(--smoke); padding: var(--space-sm); position: sticky; left: 0; z-index: 5; width: 55px; min-width: 55px; }
     
-    .slot {
-      height: 42px;
-      cursor: pointer;
-      transition: all var(--duration-fast) var(--ease-in-out);
-      position: relative;
-    }
+    .slot { height: 42px; cursor: pointer; transition: all var(--duration-fast) var(--ease-in-out); position: relative; }
+    .slot.available { background: var(--charcoal); }
+    .slot.available:hover { background: var(--gold-muted); }
+    .slot.available:hover .slot-indicator { transform: scale(1.2); }
+    .slot.unavailable { background: var(--graphite); cursor: not-allowed; }
+    .slot.selected { background: var(--gold); }
+    .slot.selected .slot-indicator { color: var(--noir); }
     
-    .slot.available {
-      background: var(--charcoal);
-    }
-    
-    .slot.available:hover {
-      background: var(--gold-muted);
-    }
-    
-    .slot.available:hover .slot-indicator {
-      transform: scale(1.2);
-    }
-    
-    .slot.unavailable {
-      background: var(--graphite);
-      cursor: not-allowed;
-    }
-    
-    .slot.selected {
-      background: var(--gold);
-    }
-    
-    .slot.selected .slot-indicator {
-      color: var(--noir);
-    }
-    
-    .slot-indicator {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      font-size: 1.1rem;
-      transition: transform var(--duration-fast);
-    }
-    
+    .slot-indicator { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-size: 1.1rem; transition: transform var(--duration-fast); }
     .slot.available .slot-indicator { color: var(--gold); }
     .slot.unavailable .slot-indicator { color: var(--ash); }
     
-    .calendar-footer {
-      text-align: center;
-      padding: var(--space-sm);
-      border-top: 1px solid var(--graphite);
-      font-size: 0.7rem;
-      color: var(--smoke);
-    }
+    .calendar-footer { text-align: center; padding: var(--space-sm); border-top: 1px solid var(--graphite); font-size: 0.7rem; color: var(--smoke); }
 
-    /* ============================================
-       📝 CUSTOMER FORM
-       ============================================ */
+    .form-field { margin-bottom: var(--space-lg); position: relative; z-index: 1; }
+    .form-field:last-child { margin-bottom: 0; }
     
-    .form-field {
-      margin-bottom: var(--space-lg);
-      position: relative;
-      z-index: 1;
-    }
+    .field-label { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-sm); }
+    .label-text { font-size: 0.85rem; font-weight: 500; color: var(--silver); }
     
-    .form-field:last-child {
-      margin-bottom: 0;
-    }
-    
-    .field-label {
-      display: flex;
-      align-items: center;
-      gap: var(--space-sm);
-      margin-bottom: var(--space-sm);
-    }
-    
-    .label-text {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--silver);
-    }
-    
-    .badge {
-      font-size: 0.6rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: var(--radius-sm);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    
-    .badge.required {
-      background: var(--gold);
-      color: var(--noir);
-    }
-    
-    .badge.optional {
-      background: transparent;
-      color: var(--smoke);
-      border: 1px solid var(--slate);
-    }
+    .badge { font-size: 0.6rem; font-weight: 700; padding: 3px 8px; border-radius: var(--radius-sm); text-transform: uppercase; letter-spacing: 0.05em; }
+    .badge.required { background: var(--gold); color: var(--noir); }
+    .badge.optional { background: transparent; color: var(--smoke); border: 1px solid var(--slate); }
     
     .text-input {
       width: 100%;
@@ -1185,47 +652,19 @@
       transition: all var(--duration-base) var(--ease-in-out);
     }
     
-    .text-input::placeholder {
-      color: var(--ash);
-    }
+    .text-input::placeholder { color: var(--ash); }
+    .text-input:hover { border-color: var(--gold-dark); }
+    .text-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-muted); }
+    .text-input.error { border-color: var(--rose); box-shadow: 0 0 0 3px var(--rose-muted); }
     
-    .text-input:hover {
-      border-color: var(--gold-dark);
-    }
-    
-    .text-input:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px var(--gold-muted);
-    }
-    
-    .text-input.error {
-      border-color: var(--rose);
-      box-shadow: 0 0 0 3px var(--rose-muted);
-    }
-    
-    .field-hint {
-      font-size: 0.7rem;
-      color: var(--smoke);
-      margin-top: var(--space-xs);
-    }
+    .field-hint { font-size: 0.7rem; color: var(--smoke); margin-top: var(--space-xs); }
 
-    /* ============================================
-       🔘 RESERVE BUTTON
-       ============================================ */
-    
     .reserve-container {
       position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       padding: var(--space-md);
       padding-bottom: max(var(--space-md), env(safe-area-inset-bottom));
-      background: linear-gradient(0deg, 
-        rgba(10,10,10,1) 0%, 
-        rgba(10,10,10,0.98) 60%,
-        rgba(10,10,10,0.9) 80%,
-        transparent 100%);
+      background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(10,10,10,0.98) 60%, rgba(10,10,10,0.9) 80%, transparent 100%);
       z-index: var(--z-fixed);
     }
     
@@ -1253,46 +692,19 @@
     .reserve-button::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(255,255,255,0.2) 50%, 
-        transparent 100%);
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%);
       transition: left var(--duration-slow) var(--ease-out-expo);
     }
     
-    .reserve-button:hover:not(:disabled) {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-gold-lg);
-    }
+    .reserve-button:hover:not(:disabled) { transform: translateY(-3px); box-shadow: var(--shadow-gold-lg); }
+    .reserve-button:hover:not(:disabled)::before { left: 100%; }
+    .reserve-button:active:not(:disabled) { transform: translateY(-1px); }
+    .reserve-button:disabled { background: var(--graphite); color: var(--smoke); cursor: not-allowed; box-shadow: none; }
     
-    .reserve-button:hover:not(:disabled)::before {
-      left: 100%;
-    }
-    
-    .reserve-button:active:not(:disabled) {
-      transform: translateY(-1px);
-    }
-    
-    .reserve-button:disabled {
-      background: var(--graphite);
-      color: var(--smoke);
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-    
-    .btn-spacer {
-      height: 100px;
-    }
+    .btn-spacer { height: 100px; }
 
-    /* ============================================
-       🍞 TOAST NOTIFICATIONS
-       監修: システムアーキテクト
-       ============================================ */
-    
     .toast-container {
       position: fixed;
       bottom: 100px;
@@ -1307,76 +719,24 @@
       pointer-events: none;
     }
     
-    .toast {
-      display: flex;
-      align-items: center;
-      gap: var(--space-md);
-      padding: var(--space-md) var(--space-lg);
-      background: var(--charcoal);
-      border: 1px solid var(--slate);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
-      pointer-events: auto;
-      animation: toastIn var(--duration-base) var(--ease-out-back);
-    }
-    
-    .toast.hiding {
-      animation: toastOut var(--duration-base) var(--ease-in-out) forwards;
-    }
-    
-    .toast.success {
-      border-color: rgba(78,205,196,0.3);
-    }
-    
-    .toast.error {
-      border-color: rgba(183,110,121,0.3);
-    }
-    
-    .toast.info {
-      border-color: rgba(201,169,98,0.3);
-    }
-    
-    .toast-icon {
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-    
+    .toast { display: flex; align-items: center; gap: var(--space-md); padding: var(--space-md) var(--space-lg); background: var(--charcoal); border: 1px solid var(--slate); border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); pointer-events: auto; animation: toastIn var(--duration-base) var(--ease-out-back); }
+    .toast.hiding { animation: toastOut var(--duration-base) var(--ease-in-out) forwards; }
+    .toast.success { border-color: rgba(78,205,196,0.3); }
+    .toast.error { border-color: rgba(183,110,121,0.3); }
+    .toast.info { border-color: rgba(201,169,98,0.3); }
+    .toast-icon { font-size: 1.3rem; flex-shrink: 0; }
     .toast.success .toast-icon { color: var(--success); }
     .toast.error .toast-icon { color: var(--rose); }
     .toast.info .toast-icon { color: var(--gold); }
-    
-    .toast-message {
-      flex: 1;
-      font-size: 0.9rem;
-      color: var(--platinum);
-      line-height: 1.4;
-    }
-    
-    .toast-close {
-      background: none;
-      border: none;
-      color: var(--smoke);
-      font-size: 1.2rem;
-      cursor: pointer;
-      padding: var(--space-xs);
-      transition: color var(--duration-fast);
-    }
-    
-    .toast-close:hover {
-      color: var(--platinum);
-    }
+    .toast-message { flex: 1; font-size: 0.9rem; color: var(--platinum); line-height: 1.4; }
+    .toast-close { background: none; border: none; color: var(--smoke); font-size: 1.2rem; cursor: pointer; padding: var(--space-xs); transition: color var(--duration-fast); }
+    .toast-close:hover { color: var(--platinum); }
 
-    /* ============================================
-       🎭 MODALS
-       ============================================ */
-    
     .modal-backdrop {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -1387,12 +747,7 @@
       transition: opacity var(--duration-base) var(--ease-in-out);
     }
     
-    .modal-backdrop.active {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 1;
-    }
+    .modal-backdrop.active { display: flex; align-items: center; justify-content: center; opacity: 1; }
     
     .modal {
       background: var(--gradient-card);
@@ -1408,24 +763,15 @@
     .modal::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(201,169,98,0.5) 50%, 
-        transparent 100%);
+      background: linear-gradient(90deg, transparent 0%, rgba(201,169,98,0.5) 50%, transparent 100%);
     }
     
-    .modal-head {
-      text-align: center;
-      margin-bottom: var(--space-xl);
-    }
+    .modal-head { text-align: center; margin-bottom: var(--space-xl); }
     
     .modal-icon-wrap {
-      width: 72px;
-      height: 72px;
+      width: 72px; height: 72px;
       margin: 0 auto var(--space-lg);
       background: var(--gold-muted);
       border: 2px solid rgba(201,169,98,0.3);
@@ -1436,196 +782,74 @@
       font-size: 2rem;
     }
     
-    .modal-icon-wrap.success {
-      background: var(--success-muted);
-      border-color: rgba(78,205,196,0.3);
-      animation: glow 2s ease-in-out infinite;
-    }
+    .modal-icon-wrap.success { background: var(--success-muted); border-color: rgba(78,205,196,0.3); animation: glow 2s ease-in-out infinite; }
+    .modal-heading { font-family: var(--font-display); font-size: 1.5rem; font-weight: 500; color: var(--platinum); letter-spacing: 0.05em; }
     
-    .modal-heading {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: var(--platinum);
-      letter-spacing: 0.05em;
-    }
+    .confirm-box { background: var(--charcoal); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); }
     
-    /* === Confirmation Details === */
-    .confirm-box {
-      background: var(--charcoal);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
+    .confirm-row { display: flex; justify-content: space-between; align-items: flex-start; padding: var(--space-sm) 0; border-bottom: 1px solid var(--graphite); }
+    .confirm-row:last-child { border-bottom: none; }
+    .confirm-key { font-size: 0.8rem; color: var(--smoke); flex-shrink: 0; }
+    .confirm-val { font-size: 0.9rem; color: var(--platinum); font-weight: 500; text-align: right; }
     
-    .confirm-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: var(--space-sm) 0;
-      border-bottom: 1px solid var(--graphite);
-    }
+    .course-items { margin: 0; padding: 0; list-style: none; }
+    .course-items li { font-size: 0.85rem; color: var(--silver); margin-bottom: var(--space-xs); }
+    .course-items li:last-child { margin-bottom: 0; }
     
-    .confirm-row:last-child {
-      border-bottom: none;
-    }
+    .notice-box { background: var(--rose-muted); border: 1px solid rgba(183,110,121,0.3); border-radius: var(--radius-md); padding: var(--space-md); margin-top: var(--space-md); }
+    .notice-box p { font-size: 0.85rem; color: var(--rose); font-weight: 500; margin: 0; }
     
-    .confirm-key {
-      font-size: 0.8rem;
-      color: var(--smoke);
-      flex-shrink: 0;
-    }
+    .modal-actions { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); }
     
-    .confirm-val {
-      font-size: 0.9rem;
-      color: var(--platinum);
-      font-weight: 500;
-      text-align: right;
-    }
+    .modal-btn { padding: var(--space-md) var(--space-lg); border-radius: var(--radius-md); font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all var(--duration-base) var(--ease-in-out); border: none; }
+    .modal-btn.secondary { background: var(--graphite); color: var(--silver); }
+    .modal-btn.secondary:hover { background: var(--slate); color: var(--platinum); }
+    .modal-btn.primary { background: var(--gradient-gold); color: var(--noir); }
+    .modal-btn.primary:hover { box-shadow: var(--shadow-gold); }
     
-    .course-items {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    
-    .course-items li {
-      font-size: 0.85rem;
-      color: var(--silver);
-      margin-bottom: var(--space-xs);
-    }
-    
-    .course-items li:last-child {
-      margin-bottom: 0;
-    }
-    
-    .notice-box {
-      background: var(--rose-muted);
-      border: 1px solid rgba(183,110,121,0.3);
-      border-radius: var(--radius-md);
-      padding: var(--space-md);
-      margin-top: var(--space-md);
-    }
-    
-    .notice-box p {
-      font-size: 0.85rem;
-      color: var(--rose);
-      font-weight: 500;
-      margin: 0;
-    }
-    
-    .modal-actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-md);
-    }
-    
-    .modal-btn {
-      padding: var(--space-md) var(--space-lg);
-      border-radius: var(--radius-md);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--duration-base) var(--ease-in-out);
-      border: none;
-    }
-    
-    .modal-btn.secondary {
+    /* 🔧 FIX-7: 二重タップ防止中のボタンスタイル */
+    .modal-btn.primary:disabled {
       background: var(--graphite);
-      color: var(--silver);
-    }
-    
-    .modal-btn.secondary:hover {
-      background: var(--slate);
-      color: var(--platinum);
-    }
-    
-    .modal-btn.primary {
-      background: var(--gradient-gold);
-      color: var(--noir);
-    }
-    
-    .modal-btn.primary:hover {
-      box-shadow: var(--shadow-gold);
-    }
-    
-    /* === Completion Modal === */
-    .completion-text {
-      text-align: center;
-      margin-bottom: var(--space-xl);
-    }
-    
-    .completion-text h3 {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      color: var(--platinum);
-      margin-bottom: var(--space-xs);
-    }
-    
-    .completion-text p {
-      font-size: 0.9rem;
       color: var(--smoke);
-    }
-    
-    .detail-box {
-      background: var(--charcoal);
-      border-radius: var(--radius-lg);
-      padding: var(--space-lg);
-      margin-bottom: var(--space-lg);
-    }
-    
-    .detail-row {
-      margin-bottom: var(--space-md);
-    }
-    
-    .detail-row:last-child {
-      margin-bottom: 0;
-    }
-    
-    .detail-label {
-      font-size: 0.7rem;
-      color: var(--smoke);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: var(--space-2xs);
-    }
-    
-    .detail-value {
-      font-size: 1rem;
-      color: var(--platinum);
-      font-weight: 500;
-    }
-    
-    .return-btn {
-      width: 100%;
-      padding: var(--space-md);
-      background: var(--gradient-gold);
-      border: none;
-      border-radius: var(--radius-md);
-      color: var(--noir);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all var(--duration-base);
-    }
-    
-    .return-btn:hover {
-      box-shadow: var(--shadow-gold);
+      cursor: not-allowed;
+      box-shadow: none;
     }
 
-    /* ============================================
-       ⏳ LOADING OVERLAY
-       ============================================ */
+    .completion-text { text-align: center; margin-bottom: var(--space-xl); }
+    .completion-text h3 { font-family: var(--font-display); font-size: 1.2rem; color: var(--platinum); margin-bottom: var(--space-xs); }
+    .completion-text p { font-size: 0.9rem; color: var(--smoke); }
     
+    .detail-box { background: var(--charcoal); border-radius: var(--radius-lg); padding: var(--space-lg); margin-bottom: var(--space-lg); }
+    .detail-row { margin-bottom: var(--space-md); }
+    .detail-row:last-child { margin-bottom: 0; }
+    .detail-label { font-size: 0.7rem; color: var(--smoke); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: var(--space-2xs); }
+    .detail-value { font-size: 1rem; color: var(--platinum); font-weight: 500; }
+    
+    .return-btn { width: 100%; padding: var(--space-md); background: var(--gradient-gold); border: none; border-radius: var(--radius-md); color: var(--noir); font-family: var(--font-body); font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: all var(--duration-base); }
+    .return-btn:hover { box-shadow: var(--shadow-gold); }
+    
+    /* 🔧 FIX-7: カレンダー追加ボタン */
+    .calendar-add-btn {
+      width: 100%;
+      padding: var(--space-md);
+      background: transparent;
+      border: 1px solid rgba(201,169,98,0.3);
+      border-radius: var(--radius-md);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--duration-base);
+      margin-bottom: var(--space-sm);
+    }
+    .calendar-add-btn:hover { background: var(--gold-muted); border-color: var(--gold); }
+
     .loading-screen {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(10, 10, 10, 0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -1636,177 +860,44 @@
       gap: var(--space-xl);
     }
     
-    .loading-screen.active {
-      display: flex;
-    }
+    .loading-screen.active { display: flex; }
     
-    .loading-animation {
-      position: relative;
-      width: 80px;
-      height: 80px;
-    }
+    .loading-animation { position: relative; width: 80px; height: 80px; }
     
-    .loading-ring {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border: 3px solid transparent;
-      border-top-color: var(--gold);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
+    .loading-ring { position: absolute; width: 100%; height: 100%; border: 3px solid transparent; border-top-color: var(--gold); border-radius: 50%; animation: spin 1s linear infinite; }
+    .loading-ring:nth-child(2) { width: 60px; height: 60px; top: 10px; left: 10px; border-top-color: var(--gold-light); animation-duration: 0.8s; animation-direction: reverse; }
+    .loading-ring:nth-child(3) { width: 40px; height: 40px; top: 20px; left: 20px; border-top-color: var(--gold-lighter); animation-duration: 0.6s; }
     
-    .loading-ring:nth-child(2) {
-      width: 60px;
-      height: 60px;
-      top: 10px;
-      left: 10px;
-      border-top-color: var(--gold-light);
-      animation-duration: 0.8s;
-      animation-direction: reverse;
-    }
+    .loading-label { font-size: 0.9rem; color: var(--gold); font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; }
     
-    .loading-ring:nth-child(3) {
-      width: 40px;
-      height: 40px;
-      top: 20px;
-      left: 20px;
-      border-top-color: var(--gold-lighter);
-      animation-duration: 0.6s;
-    }
-    
-    .loading-label {
-      font-size: 0.9rem;
-      color: var(--gold);
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-    }
-    
-    .loading-dots {
-      display: inline-flex;
-      gap: 4px;
-    }
-    
-    .loading-dots span {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: dotPulse 1.4s ease-in-out infinite;
-    }
-    
+    .loading-dots { display: inline-flex; gap: 4px; }
+    .loading-dots span { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; animation: dotPulse 1.4s ease-in-out infinite; }
     .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
     .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
 
-    /* ============================================
-       💀 SKELETON LOADING
-       ============================================ */
-    
-    .skeleton {
-      background: linear-gradient(90deg, 
-        var(--charcoal) 25%, 
-        var(--graphite) 50%, 
-        var(--charcoal) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.5s infinite;
-      border-radius: var(--radius-md);
-    }
-    
-    .skeleton-select {
-      height: 54px;
-      margin-bottom: var(--space-md);
-    }
+    .skeleton { background: linear-gradient(90deg, var(--charcoal) 25%, var(--graphite) 50%, var(--charcoal) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: var(--radius-md); }
+    .skeleton-select { height: 54px; margin-bottom: var(--space-md); }
 
-    /* ============================================
-       📱 RESPONSIVE ADJUSTMENTS
-       ============================================ */
-    
     @media (max-width: 480px) {
-      html {
-        font-size: 14px;
-      }
-      
-      .header-content {
-        padding: var(--space-md);
-      }
-      
-      .card {
-        padding: var(--space-lg);
-      }
-      
-      .nav-button {
-        padding: var(--space-xs) var(--space-sm);
-        font-size: 0.75rem;
-      }
-      
-      .nav-button span {
-        display: none;
-      }
-      
-      .time-header,
-      .schedule-table thead th:first-child {
-        width: 45px;
-        min-width: 45px;
-        font-size: 0.7rem;
-      }
-      
-      .slot {
-        height: 38px;
-      }
-      
-      .modal {
-        padding: var(--space-lg);
-      }
-      
-      .modal-actions {
-        grid-template-columns: 1fr;
-      }
+      html { font-size: 14px; }
+      .header-content { padding: var(--space-md); }
+      .card { padding: var(--space-lg); }
+      .nav-button { padding: var(--space-xs) var(--space-sm); font-size: 0.75rem; }
+      .nav-button span { display: none; }
+      .time-header, .schedule-table thead th:first-child { width: 45px; min-width: 45px; font-size: 0.7rem; }
+      .slot { height: 38px; }
+      .modal { padding: var(--space-lg); }
+      .modal-actions { grid-template-columns: 1fr; }
     }
-    
-    /* ============================================
-       ♿ ACCESSIBILITY
-       ============================================ */
     
     @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-      
-      .trust-scroll {
-        animation: none;
-      }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      .trust-scroll { animation: none; }
     }
     
-    .sr-only {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      border: 0;
-    }
-    
-    :focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 2px;
-    }
-    
-    /* High Contrast Mode */
-    @media (prefers-contrast: high) {
-      :root {
-        --gold: #FFD700;
-        --platinum: #FFFFFF;
-      }
-    }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+    @media (prefers-contrast: high) { :root { --gold: #FFD700; --platinum: #FFFFFF; } }
   </style>
 </head>
 <body>
@@ -1822,45 +913,15 @@
     <!-- Trust Section -->
     <div class="trust-section">
       <div class="trust-scroll">
-        <div class="trust-item">
-          <span class="trust-icon">⭐</span>
-          <span class="trust-text">Google評価</span>
-          <span class="trust-number">5.0</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">👤</span>
-          <span class="trust-text">施術実績</span>
-          <span class="trust-number">3,200+</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔄</span>
-          <span class="trust-text">リピート率</span>
-          <span class="trust-number">94%</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✨</span>
-          <span class="trust-text">完全個室</span>
-        </div>
+        <div class="trust-item"><span class="trust-icon">⭐</span><span class="trust-text">Google評価</span><span class="trust-number">5.0</span></div>
+        <div class="trust-item"><span class="trust-icon">👤</span><span class="trust-text">施術実績</span><span class="trust-number">3,200+</span></div>
+        <div class="trust-item"><span class="trust-icon">🔄</span><span class="trust-text">リピート率</span><span class="trust-number">94%</span></div>
+        <div class="trust-item"><span class="trust-icon">✨</span><span class="trust-text">完全個室</span></div>
         <!-- Duplicate for seamless scroll -->
-        <div class="trust-item">
-          <span class="trust-icon">⭐</span>
-          <span class="trust-text">Google評価</span>
-          <span class="trust-number">5.0</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">👤</span>
-          <span class="trust-text">施術実績</span>
-          <span class="trust-number">3,200+</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">🔄</span>
-          <span class="trust-text">リピート率</span>
-          <span class="trust-number">94%</span>
-        </div>
-        <div class="trust-item">
-          <span class="trust-icon">✨</span>
-          <span class="trust-text">完全個室</span>
-        </div>
+        <div class="trust-item"><span class="trust-icon">⭐</span><span class="trust-text">Google評価</span><span class="trust-number">5.0</span></div>
+        <div class="trust-item"><span class="trust-icon">👤</span><span class="trust-text">施術実績</span><span class="trust-number">3,200+</span></div>
+        <div class="trust-item"><span class="trust-icon">🔄</span><span class="trust-text">リピート率</span><span class="trust-number">94%</span></div>
+        <div class="trust-item"><span class="trust-icon">✨</span><span class="trust-text">完全個室</span></div>
       </div>
     </div>
     
@@ -1902,13 +963,11 @@
                 <p class="card-subtitle">施術メニューをお選びください</p>
               </div>
             </div>
-            
             <div id="menuCategories">
               <div class="skeleton skeleton-select"></div>
               <div class="skeleton skeleton-select"></div>
               <div class="skeleton skeleton-select"></div>
             </div>
-            
             <div class="summary-box">
               <div class="summary-row">
                 <span class="summary-label">合計施術時間</span>
@@ -1936,23 +995,17 @@
                 <span>残りわずか</span>
               </div>
             </div>
-            
             <div class="week-navigation">
               <button class="nav-button" id="prevWeekBtn" onclick="changeWeek(-1)" aria-label="前の週へ">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M15 18l-6-6 6-6"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
                 <span>前週</span>
               </button>
               <span class="current-period" id="currentMonth"></span>
               <button class="nav-button" id="nextWeekBtn" onclick="changeWeek(1)" aria-label="次の週へ">
                 <span>次週</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 18l6-6-6-6"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
               </button>
             </div>
-            
             <div class="calendar-container">
               <div class="calendar-loading" id="calendarLoading">
                 <span class="loading-spinner-small"></span>
@@ -1979,7 +1032,6 @@
                 <p class="card-subtitle">お客様情報をご入力ください</p>
               </div>
             </div>
-            
             <div class="form-field">
               <label class="field-label" for="customerName">
                 <span class="label-text">お名前</span>
@@ -1987,7 +1039,6 @@
               </label>
               <input type="text" id="customerName" class="text-input" placeholder="山田 太郎" autocomplete="name" required>
             </div>
-            
             <div class="form-field">
               <label class="field-label" for="phone">
                 <span class="label-text">電話番号</span>
@@ -1996,7 +1047,6 @@
               <input type="tel" id="phone" class="text-input" placeholder="090-1234-5678" autocomplete="tel" required>
               <p class="field-hint">ハイフンは自動で入力されます</p>
             </div>
-            
             <div class="form-field">
               <label class="field-label" for="email">
                 <span class="label-text">メールアドレス</span>
@@ -2030,14 +1080,7 @@
       <div class="loading-ring"></div>
       <div class="loading-ring"></div>
     </div>
-    <p class="loading-label">
-      処理中
-      <span class="loading-dots">
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </p>
+    <p class="loading-label">処理中<span class="loading-dots"><span></span><span></span><span></span></span></p>
   </div>
   
   <!-- Confirmation Modal -->
@@ -2049,8 +1092,9 @@
       </div>
       <div id="confirmDetails" class="confirm-box"></div>
       <div class="modal-actions">
-        <button class="modal-btn secondary" onclick="closeConfirmModal()">戻る</button>
-        <button class="modal-btn primary" onclick="confirmReservation()">予約を確定</button>
+        <button class="modal-btn secondary" id="confirmBackBtn" onclick="closeConfirmModal()">戻る</button>
+        <!-- 🔧 FIX-1: id付与（二重タップ防止のため）-->
+        <button class="modal-btn primary" id="confirmSubmitBtn" onclick="confirmReservation()">予約を確定</button>
       </div>
     </div>
   </div>
@@ -2067,17 +1111,21 @@
         <p>ご予約を承りました</p>
       </div>
       <div id="completeDetails" class="detail-box"></div>
+      <!-- 🔧 FIX-7: カレンダー追加ボタン（デッドコード解消） -->
+      <button class="calendar-add-btn" onclick="addToCalendar()">
+        📅 カレンダーに追加する
+      </button>
       <button class="return-btn" onclick="returnToHome()">
         予約ページへ戻る
       </button>
     </div>
   </div>
 
-  <!-- JavaScript - Part 2 続きます -->
   <script>
     // ============================================
     // 🚀 CONFIGURATION & STATE
-    // 監修: システムアーキテクト
+    // 修正版 v7.1 - 全バグ修正済み
+    // 監修: プログラムエンジニア
     // ============================================
     
     const CONFIG = {
@@ -2093,7 +1141,9 @@
       slot: null,
       duration: 0,
       step: 1,
-      processing: false
+      processing: false,
+      // 🔧 FIX-1: 予約確定の二重送信防止フラグ（新規追加）
+      confirmProcessing: false
     };
 
     // ============================================
@@ -2109,10 +1159,8 @@
     }
 
     function setupListeners() {
-      // Phone formatting
       document.getElementById('phone').addEventListener('input', formatPhone);
       
-      // Form validation
       ['customerName', 'phone', 'email'].forEach(id => {
         document.getElementById(id).addEventListener('input', () => {
           syncProgress();
@@ -2120,14 +1168,12 @@
         });
       });
       
-      // Modal backdrop close
       document.querySelectorAll('.modal-backdrop').forEach(el => {
         el.addEventListener('click', e => {
           if (e.target === el) el.classList.remove('active');
         });
       });
       
-      // Escape key
       document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
           document.querySelectorAll('.modal-backdrop.active').forEach(m => m.classList.remove('active'));
@@ -2152,7 +1198,6 @@
 
     // ============================================
     // 📊 PROGRESS SYNC
-    // 監修: Webアナリスト検定
     // ============================================
     
     function syncProgress() {
@@ -2165,11 +1210,9 @@
       const phone = document.getElementById('phone').value.trim();
       if (name && phone) done = 3;
       
-      // Update fill
       const pct = (done / 3) * 100;
       document.getElementById('progressFill').style.width = `${pct}%`;
       
-      // Update steps
       document.querySelectorAll('.progress-step').forEach((el, i) => {
         const n = i + 1;
         el.classList.remove('active', 'completed');
@@ -2244,7 +1287,6 @@
       el.appendChild(iconSpan);
       el.appendChild(msgSpan);
       el.appendChild(closeBtn);
-      
       container.appendChild(el);
       
       setTimeout(() => {
@@ -2257,21 +1299,10 @@
     // ⏳ LOADING
     // ============================================
     
-    function showLoading() {
-      document.getElementById('loadingScreen').classList.add('active');
-    }
-    
-    function hideLoading() {
-      document.getElementById('loadingScreen').classList.remove('active');
-    }
-    
-    function showCalendarLoading() {
-      document.getElementById('calendarLoading').classList.add('active');
-    }
-    
-    function hideCalendarLoading() {
-      document.getElementById('calendarLoading').classList.remove('active');
-    }
+    function showLoading() { document.getElementById('loadingScreen').classList.add('active'); }
+    function hideLoading() { document.getElementById('loadingScreen').classList.remove('active'); }
+    function showCalendarLoading() { document.getElementById('calendarLoading').classList.add('active'); }
+    function hideCalendarLoading() { document.getElementById('calendarLoading').classList.remove('active'); }
 
     // ============================================
     // 🍽️ MENU
@@ -2299,7 +1330,7 @@
       
       document.getElementById('menuCategories').innerHTML = Object.entries(categories).map(([cat, items]) => {
         const c = cfg[cat] || { icon: '📦', title: escapeHtml(cat), desc: '' };
-        const opts = items.map(m => 
+        const opts = items.map(m =>
           `<option value='${JSON.stringify(m).replace(/'/g, "&#39;")}'>${escapeHtml(m.name)} ¥${Number(m.price).toLocaleString()} / ${escapeHtml(m.duration)}分</option>`
         ).join('');
         
@@ -2434,12 +1465,14 @@
         return d;
       });
       
-      // Month display
       const f = dates[0], l = dates[6];
-      document.getElementById('currentMonth').textContent = 
-        f.getMonth() === l.getMonth() 
-          ? `${f.getFullYear()}年${f.getMonth() + 1}月` 
-          : `${f.getMonth() + 1}月 〜 ${l.getMonth() + 1}月`;
+      // 🔧 FIX-3: 月表示もJST固定で取得
+      const fMonth = getJSTComponents(f);
+      const lMonth = getJSTComponents(l);
+      document.getElementById('currentMonth').textContent =
+        fMonth.month === lMonth.month
+          ? `${fMonth.year}年${fMonth.month}月`
+          : `${fMonth.month}月 〜 ${lMonth.month}月`;
       
       document.getElementById('prevWeekBtn').disabled = state.weekOffset === 0;
       document.getElementById('nextWeekBtn').disabled = state.weekOffset >= 3;
@@ -2455,13 +1488,14 @@
         <tr>
           <th></th>
           ${dates.map(d => {
-            const dow = d.getDay();
-            const cls = dow === 0 ? 'sunday' : dow === 6 ? 'saturday' : '';
+            // 🔧 FIX-3: JSTで曜日・日付を取得
+            const jst = getJSTComponents(d);
+            const cls = jst.dayOfWeek === 0 ? 'sunday' : jst.dayOfWeek === 6 ? 'saturday' : '';
             return `
               <th>
                 <div class="date-cell">
-                  <span class="date-number">${d.getDate()}</span>
-                  <span class="date-day ${cls}">${days[dow]}</span>
+                  <span class="date-number">${jst.date}</span>
+                  <span class="date-day ${cls}">${days[jst.dayOfWeek]}</span>
                 </div>
               </th>
             `;
@@ -2501,8 +1535,46 @@
       `).join('');
     }
 
+    // ============================================
+    // 🔧 FIX-3: JSTタイムゾーン安全な日付処理
+    // 元の formatKey() はブラウザのローカル時間を使用していたため
+    // 日本以外のタイムゾーン設定環境で日付がズレる問題を修正。
+    // Intl.DateTimeFormat で Asia/Tokyo 固定で取得する。
+    // ============================================
+
+    /**
+     * 日付オブジェクトから JST の各要素を取得する
+     * @param {Date} d
+     * @returns {{ year: number, month: number, date: number, dayOfWeek: number }}
+     */
+    function getJSTComponents(d) {
+      const parts = new Intl.DateTimeFormat('ja-JP', {
+        timeZone: 'Asia/Tokyo',
+        year: 'numeric',
+        month: 'numeric',
+        day: 'numeric',
+        weekday: 'narrow'
+      }).formatToParts(d);
+
+      const get = type => parseInt(parts.find(p => p.type === type)?.value || '0', 10);
+      const weekdays = ['日', '月', '火', '水', '木', '金', '土'];
+      const weekdayStr = parts.find(p => p.type === 'weekday')?.value || '';
+
+      return {
+        year: get('year'),
+        month: get('month'),
+        date: get('day'),
+        dayOfWeek: weekdays.indexOf(weekdayStr)
+      };
+    }
+
+    /**
+     * Date → "yyyy-MM-dd" (JST固定)
+     * サーバー側の Utilities.formatDate(date, 'Asia/Tokyo', 'yyyy-MM-dd') と一致させる
+     */
     function formatKey(d) {
-      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      const { year, month, date } = getJSTComponents(d);
+      return `${year}-${String(month).padStart(2, '0')}-${String(date).padStart(2, '0')}`;
     }
 
     async function changeWeek(n) {
@@ -2594,7 +1666,13 @@
         ${hairRemoval ? '<div class="notice-box"><p>⚠️ 施術前に脱毛部分のシェービングをお願いします</p></div>' : ''}
       `;
       
+      // 確認モーダルを開く
       document.getElementById('confirmModal').classList.add('active');
+      
+      // 確定ボタンをリセット（念のため）
+      const submitBtn = document.getElementById('confirmSubmitBtn');
+      submitBtn.disabled = false;
+      submitBtn.textContent = '予約を確定';
       
       setTimeout(() => {
         state.processing = false;
@@ -2606,7 +1684,21 @@
       document.getElementById('confirmModal').classList.remove('active');
     }
 
+    // ============================================
+    // 🔧 FIX-1: 予約確定の二重送信防止
+    // 🔧 FIX-2: 競合エラー時にカレンダーを自動リロード
+    // ============================================
+
     async function confirmReservation() {
+      // FIX-1: 処理中は再実行しない
+      if (state.confirmProcessing) return;
+      state.confirmProcessing = true;
+
+      // ボタンを即座に無効化（視覚的フィードバック）
+      const submitBtn = document.getElementById('confirmSubmitBtn');
+      submitBtn.disabled = true;
+      submitBtn.textContent = '処理中...';
+
       closeConfirmModal();
       showLoading();
       
@@ -2631,9 +1723,27 @@
         toast('予約が完了しました', 'success');
         
       } catch (e) {
-        toast(e.message || 'エラーが発生しました', 'error');
+        const msg = e.message || 'エラーが発生しました';
+        toast(msg, 'error');
+
+        // FIX-2: 予約が埋まっているエラーの場合、カレンダーを自動リロードして選択をリセット
+        const isConflict = msg.includes('既に予約') || msg.includes('埋まって') || msg.includes('重複');
+        if (isConflict) {
+          state.slot = null;
+          state.weekCache = {};
+          await loadCalendar(state.duration, state.weekOffset);
+          syncProgress();
+          syncButton();
+          toast('カレンダーを更新しました。別の日時をお選びください。', 'info', 5000);
+        }
+
       } finally {
         hideLoading();
+        // FIX-1: 必ずフラグをリセット
+        state.confirmProcessing = false;
+        // ボタンも元に戻す（次回使用に備えて）
+        submitBtn.disabled = false;
+        submitBtn.textContent = '予約を確定';
       }
     }
 
@@ -2641,6 +1751,8 @@
       const [y, m, d] = state.slot.date.split('-');
       const date = new Date(state.slot.date);
       const days = ['日', '月', '火', '水', '木', '金', '土'];
+      // 🔧 FIX-3: 曜日取得もJSTで
+      const { dayOfWeek } = getJSTComponents(date);
       const hairRemoval = state.courses.some(c => c.category === '脱毛メニュー' || c.category === '各パーツ脱毛メニュー');
       
       const totalTime = state.courses.reduce((s, c) => s + c.duration, 0);
@@ -2649,7 +1761,7 @@
       document.getElementById('completeDetails').innerHTML = `
         <div class="detail-row">
           <div class="detail-label">予約日時</div>
-          <div class="detail-value">${escapeHtml(y)}年${parseInt(m)}月${parseInt(d)}日（${days[date.getDay()]}）${escapeHtml(state.slot.time)}</div>
+          <div class="detail-value">${escapeHtml(y)}年${parseInt(m)}月${parseInt(d)}日（${days[dayOfWeek]}）${escapeHtml(state.slot.time)}</div>
         </div>
         <div class="detail-row">
           <div class="detail-label">コース</div>
@@ -2665,7 +1777,14 @@
       document.getElementById('completeModal').classList.add('active');
     }
 
+    // ============================================
+    // 🔧 FIX-7: addToCalendar() を完了モーダルのボタンから呼び出せるように
+    // （デッドコード解消・実際に機能するように修正）
+    // ============================================
+
     function addToCalendar() {
+      if (!state.slot) return;
+
       const [y, m, d] = state.slot.date.split('-');
       const [h, min] = state.slot.time.split(':');
       const dur = state.courses.reduce((s, c) => s + c.duration, 0);
@@ -2673,13 +1792,15 @@
       const start = new Date(+y, +m - 1, +d, +h, +min);
       const end = new Date(start.getTime() + dur * 60000);
       
-      const fmt = dt => `${dt.getFullYear()}${String(dt.getMonth()+1).padStart(2,'0')}${String(dt.getDate()).padStart(2,'0')}T${String(dt.getHours()).padStart(2,'0')}${String(dt.getMinutes()).padStart(2,'0')}00`;
+      const fmt = dt =>
+        `${dt.getFullYear()}${String(dt.getMonth()+1).padStart(2,'0')}${String(dt.getDate()).padStart(2,'0')}T${String(dt.getHours()).padStart(2,'0')}${String(dt.getMinutes()).padStart(2,'0')}00`;
       
       const ics = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
+        'PRODID:-//PAIX//JP',
         'BEGIN:VEVENT',
-        `UID:paix-${Date.now()}`,
+        `UID:paix-${Date.now()}@paix`,
         `DTSTAMP:${fmt(new Date())}`,
         `DTSTART:${fmt(start)}`,
         `DTEND:${fmt(end)}`,
@@ -2689,7 +1810,13 @@
         'END:VCALENDAR'
       ].join('\r\n');
       
-      location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'paix_reservation.ics';
+      a.click();
+      URL.revokeObjectURL(url);
     }
 
     function returnToHome() {
@@ -2701,6 +1828,7 @@
       state.slot = null;
       state.weekCache = {};
       state.weekOffset = 0;
+      state.confirmProcessing = false; // 🔧 FIX-1: フラグもリセット
       
       document.querySelectorAll('#menuCategories select').forEach(s => s.value = '');
       document.getElementById('totalDuration').textContent = '0分';
